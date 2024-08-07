@@ -131,3 +131,61 @@ h1 {
   background-color: #494848;
   font-size: 14px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .chat-container {
+    height: 75vh;
+  }
+
+  .chat-ctrls {
+    gap: 1rem;
+  }
+
+  #sendButton {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #cb-text {
+    font-size: 1.2rem;
+  }
+
+  .chat-container {
+    height: 70vh;
+  }
+
+  .chat-ctrls {
+    gap: 0.5rem;
+    padding: 5px;
+  }
+
+  #userInput {
+    padding: 6px;
+  }
+
+  #sendButton {
+    padding: 6px 10px;
+  }
+
+  .bot,
+  .user {
+    padding: 8px;
+    margin-bottom: 5px;
+  }
+
+  .bot button {
+    top: 2px;
+    right: 2px;
+    font-size: 10px;
+  }
+
+  .bot button:hover {
+    font-size: 12px;
+  }
+}
