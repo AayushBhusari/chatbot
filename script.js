@@ -1,12 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Directly include the API key here
-const API_KEY = "your_google_generative_ai_api_key";
-const genAI = new GoogleGenerativeAI(API_KEY);
-
-// Initialize the generative model
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
 // Maintain the conversation history
 let conversationHistory = [];
 
@@ -17,6 +10,7 @@ const updateChatBox = (sender, message) => {
   messageElement.className = sender;
   messageElement.textContent = message;
   chatBox.appendChild(messageElement);
+  chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
 };
 
 // Function to handle user input
@@ -26,28 +20,40 @@ const getUserInput = () => {
     alert("Please input something ......");
   } else {
     updateChatBox("user", userInput);
-    getBotResponse(userInput);
     document.getElementById("userInput").value = "";
+    getBotResponse(userInput);
   }
 };
 
 // Function to get bot response
 const getBotResponse = async (userInput) => {
-  conversationHistory.push({ role: "user", parts: [{ text: userInput }] });
+  try {
+    // Directly include the API key here
+    const API_KEY = "your_google_generative_ai_api_key";
+    const genAI = new GoogleGenerativeAI(API_KEY);
 
-  const chat = model.startChat({
-    history: conversationHistory,
-    generationConfig: {
-      maxOutputTokens: 500,
-    },
-  });
+    // Initialize the generative model
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-  const result = await chat.sendMessage(userInput);
-  const response = await result.response;
-  const text = response.parts.map((part) => part.text).join(" ");
-  updateChatBox("bot", text);
+    conversationHistory.push({ role: "user", parts: [{ text: userInput }] });
 
-  conversationHistory.push({ role: "model", parts: [{ text: text }] });
+    const chat = model.startChat({
+      history: conversationHistory,
+      generationConfig: {
+        maxOutputTokens: 500,
+      },
+    });
+
+    const result = await chat.sendMessage(userInput);
+    const response = await result.response;
+    const text = response.parts.map((part) => part.text).join(" ");
+    updateChatBox("bot", text);
+
+    conversationHistory.push({ role: "model", parts: [{ text: text }] });
+  } catch (error) {
+    console.error("Error getting bot response:", error);
+    updateChatBox("bot", "Oops! Something went wrong. Please try again later.");
+  }
 };
 
 // Add Event Listener
