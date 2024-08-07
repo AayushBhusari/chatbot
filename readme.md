@@ -9,7 +9,6 @@ LegalEase.AI is an interactive chatbot designed to handle multi-turn conversatio
 - **JavaScript:** Handling asynchronous operations, event listeners, and user interactions.
 - **HTML & CSS:** Creating and styling a responsive chat interface.
 - **Google Generative AI:** Integrating and utilizing a generative AI model to process and respond to user inputs.
-- **Environment Configuration:** Managing API keys securely using `dotenv`.
 
 ## Technologies Used
 
@@ -17,14 +16,12 @@ LegalEase.AI is an interactive chatbot designed to handle multi-turn conversatio
 - **CSS:** For styling the chat interface.
 - **JavaScript:** For managing user interactions and integrating the AI model.
 - **Google Generative AI:** For generating intelligent responses to user inputs.
-- **dotenv**: For secure API integration.
 
 ## Features
 
 - **Multi-Turn Conversations:** Maintains context and history of the dialogue.
 - **Responsive Design:** Provides a clean and user-friendly chat interface.
 - **Asynchronous Messaging:** Ensures smooth and seamless user-bot interaction.
-- **Secure API Integration:** Uses environment variables for secure API key management.
 
 ## Specifications
 
@@ -45,15 +42,15 @@ LegalEase.AI is an interactive chatbot designed to handle multi-turn conversatio
 2. **Install Dependencies**:
 
    ```bash
-   npm install dotenv @google/generative-ai
+   npm install @google/generative-ai
    ```
 
-3. **Create a `.env` File**:
+3. **Add Your API Key**:
 
-   Create a file named `.env` in the project root directory and add the following line, replacing `your_google_generative_ai_api_key` with your actual API key:
+   In `script.js`, replace `'your_google_generative_ai_api_key'` with your actual API key.
 
-   ```plaintext
-   API_KEY=your_google_generative_ai_api_key
+   ```javascript
+   const API_KEY = "your_google_generative_ai_api_key";
    ```
 
 4. **Run the Project**:
