@@ -6,42 +6,41 @@ LegalEase.AI is an interactive chatbot designed to handle multi-turn conversatio
 
 ## Skills Learned
 
-- **JavaScript**: Handling asynchronous operations, event listeners, and user interactions.
-- **HTML & CSS**: Creating and styling a responsive chat interface.
-- **Google Generative AI**: Integrating and utilizing a generative AI model to process and respond to user inputs.
-- **Environment Configuration**: Managing API keys securely using `dotenv`.
+- **JavaScript:** Handling asynchronous operations, event listeners, and user interactions.
+- **HTML & CSS:** Creating and styling a responsive chat interface.
+- **Google Generative AI:** Integrating and utilizing a generative AI model to process and respond to user inputs.
+- **Environment Configuration:** Managing API keys securely using `dotenv`.
 
 ## Technologies Used
 
-- **HTML**: For the structure of the chatbot interface.
-- **CSS**: For styling the chat interface.
-- **JavaScript**: For managing user interactions and integrating the AI model.
-- **Google Generative AI**: For generating intelligent responses to user inputs.
-- **dotenv**: For secure environment variable management.
+- **HTML:** For the structure of the chatbot interface.
+- **CSS:** For styling the chat interface.
+- **JavaScript:** For managing user interactions and integrating the AI model.
+- **Google Generative AI:** For generating intelligent responses to user inputs.
+- **dotenv**: For secure API integration.
 
 ## Features
 
-- **Multi-Turn Conversations**: Maintains context and history of the dialogue.
-- **Responsive Design**: Provides a clean and user-friendly chat interface.
-- **Asynchronous Messaging**: Ensures smooth and seamless user-bot interaction.
-- **Secure API Integration**: Uses environment variables for secure API key management.
+- **Multi-Turn Conversations:** Maintains context and history of the dialogue.
+- **Responsive Design:** Provides a clean and user-friendly chat interface.
+- **Asynchronous Messaging:** Ensures smooth and seamless user-bot interaction.
+- **Secure API Integration:** Uses environment variables for secure API key management.
 
 ## Specifications
 
-- **Generative Model**: Utilizes the `gemini-1.5-flash` model from Google Generative AI.
-- **Maximum Output Tokens**: Configured to generate up to 500 tokens per response.
-- **Conversation History**: Tracks and maintains an array of conversation history with roles and parts for context.
-- **User Interface**: Includes a chat box, input field, and send button for user interactions.
+- **Generative Model:** Utilizes the `gemini-1.5-flash` model from Google Generative AI.
+- **Maximum Output Tokens:** Configured to generate up to 500 tokens per response.
+- **Conversation History:** Tracks and maintains an array of conversation history with roles and parts for context.
+- **User Interface:** Includes a chat box, input field, and send button for user interactions.
 
 ## Setup Instructions
 
 1. **Clone the Repository**:
+
    ```bash
    git clone https://github.com/yourusername/LegalEase.AI-Chatbot.git
    cd LegalEase.AI-Chatbot
    ```
-
-````
 
 2. **Install Dependencies**:
 
@@ -51,12 +50,15 @@ LegalEase.AI is an interactive chatbot designed to handle multi-turn conversatio
 
 3. **Create a `.env` File**:
 
+   Create a file named `.env` in the project root directory and add the following line, replacing `your_google_generative_ai_api_key` with your actual API key:
+
    ```plaintext
    API_KEY=your_google_generative_ai_api_key
    ```
 
 4. **Run the Project**:
-   - Open `index.html` in a web browser to start the chatbot interface.
+
+   Open `index.html` in a web browser to start the chatbot interface.
 
 ## Usage
 
@@ -72,4 +74,3 @@ LegalEase.AI is an interactive chatbot designed to handle multi-turn conversatio
 ## Contributions
 
 Contributions are welcome! Feel free to submit a pull request or open an issue to suggest improvements or report bugs.
-````
